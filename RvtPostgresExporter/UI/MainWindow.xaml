@@ -1,0 +1,113 @@
+﻿<Window x:Class="RvtPostgresExporter.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RVT PostgreSQL Exporter (MVP)"
+        Height="520" Width="900"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- TOP: Profile -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button x:Name="BtnLoadProfile"
+                    Content="Загрузить профиль (parameters.json)"
+                    Width="280"
+                    Margin="0,0,10,0"
+                    Click="BtnLoadProfile_Click"/>
+            <TextBlock x:Name="TxtProfileInfo"
+                       VerticalAlignment="Center"
+                       Text="Профиль: не загружен"/>
+        </StackPanel>
+
+        <!-- MAIN -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LEFT: status -->
+            <Border Grid.Column="0" BorderBrush="#888" BorderThickness="1" Padding="10" CornerRadius="4">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" FontSize="14" Text="Статус"/>
+                    <TextBlock x:Name="TxtStatus" Text="Готово" Margin="0,8,0,0" TextWrapping="Wrap"/>
+
+                    <TextBlock Margin="0,16,0,0" FontWeight="Bold" FontSize="14" Text="Подключение к БД"/>
+                    <TextBlock x:Name="TxtDbStatus" Text="Не выбрано" Margin="0,8,0,0" TextWrapping="Wrap"/>
+
+                    <Border Margin="0,16,0,0" BorderBrush="#DDD" BorderThickness="1" Padding="8" CornerRadius="4" Background="#FAFAFA">
+                        <StackPanel>
+                            <TextBlock FontWeight="SemiBold" Text="Примечание по экспорту"/>
+                            <TextBlock Margin="0,6,0,0"
+                                       TextWrapping="Wrap"
+                                       Text="Экспорт выгружает элементы из 3D вида Navisworks в связях + помещения (Rooms) отдельным проходом по OST_Rooms. Разделитель CSV: ';'."/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <!-- RIGHT: actions -->
+            <Border Grid.Column="2" BorderBrush="#888" BorderThickness="1" Padding="10" CornerRadius="4">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,10" Text="Действия"/>
+
+                    <Button x:Name="BtnSelectDb"
+                            Content="Подключение к DB"
+                            Height="34"
+                            Margin="0,0,0,10"
+                            Click="BtnSelectDb_Click"/>
+
+                    <Button x:Name="BtnCheckDb"
+                            Content="Проверить подключение"
+                            Height="34"
+                            Margin="0,0,0,10"
+                            Click="BtnCheckDb_Click"/>
+
+                    <Separator Margin="0,6,0,10"/>
+
+                    <Button x:Name="BtnExportTxt"
+                            Content="Экспорт TXT (CSV ';')"
+                            Height="34"
+                            Margin="0,0,0,10"
+                            Click="BtnExportTxt_Click"
+                            IsEnabled="False"/>
+
+                    <Button x:Name="BtnExportPg"
+                            Content="Экспорт в PostgreSQL (v2)"
+                            Height="34"
+                            Margin="0,0,0,10"
+                            Click="BtnExportPg_Click"
+                            IsEnabled="False"/>
+
+                    <TextBlock Margin="0,8,0,0"
+                               FontSize="12"
+                               Foreground="#555"
+                               TextWrapping="Wrap"
+                               Text="TXT — после выбора профиля. PostgreSQL — после выбора DB и профиля."/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Bottom: Progress -->
+        <Border Grid.Row="2" BorderBrush="#DDD" BorderThickness="1" Padding="8" CornerRadius="4">
+            <StackPanel>
+                <ProgressBar x:Name="Progress"
+                             Height="18"
+                             Minimum="0"
+                             Maximum="100"
+                             Value="0"
+                             Visibility="Collapsed"/>
+                <TextBlock x:Name="TxtProgress"
+                           Margin="0,6,0,0"
+                           Foreground="#555"
+                           TextWrapping="Wrap"
+                           Text=""/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
