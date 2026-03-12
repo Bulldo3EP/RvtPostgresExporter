@@ -1,0 +1,52 @@
+[
+  { "Name": "Имя_Файла", "Type": "TEXT", "Method": "FilesName" },
+  { "Name": "ID", "Type": "INTEGER", "Method": "Id" },
+
+  { "Name": "Категория", "Type": "TEXT", "Method": "BuiltInCategory" },
+  { "Name": "FamilyName", "Type": "TEXT", "Method": "BuiltInFamilyName" },
+  { "Name": "TypeName", "Type": "TEXT", "Method": "BuiltInTypeName" },
+
+  { "Name": "Объем", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Высота", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Завод_изготовитель", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Основной матераил элемента", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Зона обслуживания", "Type": "TEXT", "Method": "Param" },
+  { "Name": "Код по классификатору", "Type": "TEXT", "Method": "Param" },
+
+  { "Name": "ADSK_Количество комнат", "Type": "INTEGER", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Комплект", "Type": "TEXT", "Method": "Param" },
+  { "Name": "КСИ_Тип", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Комфорт", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Корпус", "Type": "TEXT", "Method": "Param" },
+
+  { "Name": "ADSK_Коэффициент площади помещения", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Материал", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Наименование", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Номер секции", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Огнестойкость", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Описание", "Type": "TEXT", "Method": "Param" },
+
+  { "Name": "Площадь", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Площадь квартиры", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Площадь квартиры жилая", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Площадь квартиры общая", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Площадь с коэффициентом", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Подземная часть", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Премиум", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Состав многослойной конструкции", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Состав структура отделки", "Type": "TEXT", "Method": "Param" },
+
+  { "Name": "Теплопроводность", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Тип квартиры", "Type": "TEXT", "Method": "Param" },
+  { "Name": "ADSK_Тип помещения", "Type": "TEXT", "Method": "Param" },
+
+  { "Name": "Ширина", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+  { "Name": "ADSK_Ширина полотна", "Type": "DOUBLE PRECISION", "Method": "Param", "Normalize": "Number" },
+
+  { "Name": "ADSK_Этаж", "Type": "INTEGER", "Method": "Param", "Normalize": "Number" }
+]
