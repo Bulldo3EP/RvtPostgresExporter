@@ -1,19 +1,42 @@
-3) Настройка доступа (если плагин на другой машине)
+# Установка RVT PostgreSQL Exporter
 
-Если PostgreSQL и Revit на одном ПК — можно пропустить.
+## Шаг 1 — Создать переменную среды
 
-3.1 postgresql.conf
+Имя:
+RVT_PG_ANIS_PASSWORD
 
-Открой файл postgresql.conf и поставь:
+Значение:
+<ваш пароль PostgreSQL>
 
-listen_addresses = '*' (или конкретный IP)
+После создания переменной полностью перезапустить Revit.
 
-3.2 pg_hba.conf
+---
 
-Добавь строку (пример для локалки):
+## Шаг 2 — Настроить connections.json
 
-host    revit_export    revit_exporter    192.168.0.0/16    md5
+Файл:
+%APPDATA%\RvtPostgresExporter\connections.json
 
-И оставь существующую для 127.0.0.1/32 (локально).
+Убедиться, что имя базы совпадает с существующей в PostgreSQL.
 
-Перезапусти службу PostgreSQL.
+---
+
+## Шаг 3 — Настроить parameters.json
+
+Файл:
+%APPDATA%\RvtPostgresExporter\parameters.json
+
+В нём задаются:
+- таблица
+- категории
+- параметры Revit
+- типы данных PostgreSQL
+
+---
+
+## Шаг 4 — Проверка
+
+1. Запустить Revit
+2. Открыть плагин
+3. Нажать "Проверить подключение"
+4. Статус должен быть OK
