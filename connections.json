@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "defaults": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "timeoutSeconds": 15,
+    "commandTimeoutSeconds": 30,
+    "sslMode": "Disable",
+    "applicationName": "RVT-Postgres-Exporter"
+  },
+  "connections": [
+    {
+      "name": "ANIS",
+      "database": "ANIS",
+      "password": {
+        "provider": "EnvironmentVariable",
+        "ref": "RVT_PG_UB3C_PASSWORD"
+      }
+    }
+  ]
+}
